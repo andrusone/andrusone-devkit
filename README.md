@@ -1,4 +1,7 @@
-# 🚀 AndrusOne-DevKit: A Smart Start for Multi-Stack Engineering
+# 🚀 AndrusOne-DevKit  
+## A Smart Start for Multi-Stack Engineering
+
+[![CI](https://github.com/andrusone/andrusone-devkit/actions/workflows/verify-devkit.yml/badge.svg)](https://github.com/andrusone/andrusone-devkit/actions)
 
 **Welcome to your all-in-one project starter**, designed for developers, data engineers, and systems pros who want to move fast without compromising quality.
 
@@ -127,4 +130,3 @@ Happy hacking! 🧑‍💻
 ---
 
 Made with 💻 by Dave Andrus
-
