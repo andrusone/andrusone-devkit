@@ -22,6 +22,7 @@ repos:
     hooks:
       - id: shellcheck
         files: ^shell/.*
+        additional_dependencies: []
 
   # SQLFluff: multiple dialects with autofix enabled
   - repo: https://github.com/sqlfluff/sqlfluff
@@ -42,3 +43,13 @@ repos:
         entry: sqlfluff fix
         args: [--dialect=snowflake]
         files: ^sql/snowflake/.*
+
+  # Local pytest hook
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: poetry run pytest
+        language: system
+        types: [python]
+        files: ^tests/
