@@ -77,6 +77,23 @@ else
   failures=$((failures + 1))
 fi
 
+# --- Install Docker if needed ---
+if ! command -v docker &>/dev/null; then
+  log "Docker not found. Installing via official script..."
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh get-docker.sh
+  rm get-docker.sh
+
+  log "Adding user '$USER' to the docker group..."
+  sudo usermod -aG docker "$USER"
+  log "Activating docker group for current session..."
+  newgrp docker <<EOF
+echo "✅ Docker installed and group permissions activated"
+EOF
+else
+  log "Docker is already installed"
+fi
+
 # --- Verify VIRTUAL_ENV ---
 if [ -z "${VIRTUAL_ENV:-}" ]; then
   log "VIRTUAL_ENV is not set. The Poetry environment may not be active."
