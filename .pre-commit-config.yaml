@@ -48,6 +48,7 @@ repos:
   - repo: local
     hooks:
       - id: pytest
+        args: [--cache-clear]
         name: pytest
         entry: poetry run pytest
         language: system
